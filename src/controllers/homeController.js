@@ -54,8 +54,11 @@ let getEditCRUD = async (req, res) => {
 
 let putCRUD = async (req, res) => {
     let data = req.body;
-    await CRUDService.updateUserData(data);
-    return res.send('Update Succesful')
+    let allUsers = await CRUDService.updateUserData(data);
+    return res.render('displayCRUD.ejs',
+        {
+            dataTable: allUsers
+        });
 }
 
 module.exports = {
@@ -65,5 +68,5 @@ module.exports = {
     postCRUD: postCRUD,
     displayGetCRUD: displayGetCRUD,
     getEditCRUD: getEditCRUD,
-    putCRUD: putCRUD
+    putCRUD: putCRUD,
 }

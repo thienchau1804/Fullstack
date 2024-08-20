@@ -13,7 +13,7 @@
 
 <body>
     <div class="container">
-        <form action="/put-crud" method="PUT">
+        <form action="/put-crud" method="POST">
             <div class="col-12 mt-3">Edit User</div>
             <div class="form-row">
                 <div class="form-group col-md-12">
@@ -29,7 +29,7 @@
                     <input type="text" class="form-control" name="address" value="<%= user.address %>">
                 </div>
             </div>
-            <input type="text" name="id" value="<%= user.id %>" />
+            <input name="id" value="<%= user.id %>" type="text" />
             <button type="submit" class="btn btn-primary">Update</button>
         </form>
     </div>
